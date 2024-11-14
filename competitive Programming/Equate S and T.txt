@@ -1,0 +1,36 @@
+// Equate S and T
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    string a,b;
+	    int m,n;
+	    cin>>m>>n;
+	    cin>>a>>b;
+	    // count no of a;
+	    int counta,countb; counta=countb=0;
+	    int x,p;x=p=0;
+	    bool xt,pt;
+	    xt=pt=true;
+	    for(int i=0;i<m;i++)
+	    {
+	        if(a[i]=='a') counta++;
+	        if(xt && a[i]=='b') x++; // count bs before a ;
+	        else xt=false;
+	    }
+	    for(int i=0;i<n;i++)
+	    {
+	         if(b[i]=='a') countb++;
+	        if(pt && b[i]=='b') p++;  // count bs before first a;
+	        else pt=false;
+	    }
+	    if(x==p && counta==countb) cout<<"Yes"<<endl; // as no of as in both  the string are always gonna be same ;
+	    else cout<<"No"<<endl;
+	    
+	}
+
+}
